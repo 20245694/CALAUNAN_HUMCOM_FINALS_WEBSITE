@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Today's sample junk shop prices per kilo, with preparation tips and an earnings estimator.">
+  <title>Price Board | KiloKita</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="logo" href="index.html">
+          <img src="KILOKITA.png" alt="" width="62" height="44">
+        <span>KiloKita</span>
+      </a>
+
+      <nav class="nav" aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="find-a-shop.html">Find a Shop</a></li>
+          <li><a href="price-board.html" aria-current="page">Price Board</a></li>
+          <li><a href="sort-it-right.html">Sort It Right</a></li>
+          <li><a href="hazardous-waste.html">Hazardous Waste</a></li>
+          <li><a class="button button-lime" href="#">List your shop</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main" class="container">
+
+    <div class="section">
+      <h1>Price Board</h1>
+      <p class="gray">Sample prices · Updated 4 Nov 2026, 8:15 AM by 63 shop owners</p>
+    </div>
+
+
+    <div class="two-columns">
+
+      <section class="card table-box">
+        <table>
+          <caption class="hidden">Price per kilo by material</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Material</th>
+              <th scope="col">Price</th>
+              <th scope="col">vs last week</th>
+              <th scope="col">Prepare it</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">PET plastic bottles</th>
+              <td><strong>₱14 / kg</strong></td>
+              <td class="gray">+₱1.00</td>
+              <td class="gray">Rinse, remove caps</td>
+            </tr>
+            <tr>
+              <th scope="row">HDPE (shampoo, detergent)</th>
+              <td><strong>₱18 / kg</strong></td>
+              <td class="gray">No change</td>
+              <td class="gray">Rinse, drain, flatten</td>
+            </tr>
+            <tr>
+              <th scope="row">Cardboard</th>
+              <td><strong>₱5 / kg</strong></td>
+              <td class="gray">+₱0.50</td>
+              <td class="gray">Flatten, keep dry</td>
+            </tr>
+            <tr>
+              <th scope="row">Newspaper</th>
+              <td><strong>₱4 / kg</strong></td>
+              <td class="gray">−₱0.50</td>
+              <td class="gray">Bundle with twine</td>
+            </tr>
+            <tr>
+              <th scope="row">Aluminum cans</th>
+              <td><strong>₱75 / kg</strong></td>
+              <td class="gray">+₱3.00</td>
+              <td class="gray">Empty and crush</td>
+            </tr>
+            <tr>
+              <th scope="row">Copper wire</th>
+              <td><strong>₱420 / kg</strong></td>
+              <td class="gray">No change</td>
+              <td class="gray">Strip plastic if possible</td>
+            </tr>
+            <tr>
+              <th scope="row">Iron scrap</th>
+              <td><strong>₱11 / kg</strong></td>
+              <td class="gray">−₱0.50</td>
+              <td class="gray">Separate from other metals</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+
+      <form class="estimator" aria-labelledby="estimator-title">
+        <h2 id="estimator-title">How much could I earn this week?</h2>
+
+        <label for="pet">PET bottles (kg)</label>
+        <input id="pet" name="pet" type="number" min="0" step="0.5" value="6">
+
+        <label for="cardboard">Cardboard (kg)</label>
+        <input id="cardboard" name="cardboard" type="number" min="0" step="0.5" value="10">
+
+        <label for="aluminum">Aluminum cans (kg)</label>
+        <input id="aluminum" name="aluminum" type="number" min="0" step="0.5" value="1.5">
+
+        <p class="result">
+          <strong>₱246.50</strong><br>
+          <span class="gray">estimated, keeping 17.5 kg of waste out of landfill</span>
+        </p>
+
+        <div class="button-row">
+          <button class="button button-green" type="button">Estimate</button>
+          <button class="button button-white" type="button">Print price list</button>
+        </div>
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <img src="KILOKITA.png" alt="" width="62" height="44">
+          <span class="hidden">KiloKita home</span>
+        </a>
+        <p>Every Kilo Counts, Every Peso Matters.</p>
+      </div>
+
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="find-a-shop.html">Find a Shop</a></li>
+          <li><a href="price-board.html">Price Board</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="sort-it-right.html">Sort It Right</a></li>
+          <li><a href="hazardous-waste.html">Hazardous Waste</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>About</h2>
+        <ul>
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">References</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Language</h2>
+        <ul>
+          <li><a href="#" lang="en">English</a> | <a href="#" lang="fil">Filipino</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="container copyright">© 2026 Kilo Kita - Dwein Markeen S. Calaunan</p>
+  </footer>
+
+</body>
+
+</html>

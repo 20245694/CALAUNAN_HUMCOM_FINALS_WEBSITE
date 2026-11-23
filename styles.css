@@ -1,0 +1,986 @@
+/* =========================================================
+   KiloKita - styles.css
+   Plain HTML5 + CSS3 only (no Bootstrap, no JavaScript).
+
+   Sections:
+   1. Colors and reset
+   2. Text and links
+   3. Page layout
+   4. Header and menu
+   5. Buttons, pills and cards
+   6. Forms
+   7. Home page
+   8. Find a Shop page
+   9. Price Board page
+  10. Sort It Right page
+  11. Hazardous Waste page
+  12. Footer
+  13. Small screens
+  14. Print
+   ========================================================= */
+
+
+/* ---------- 1. COLORS AND RESET ---------- */
+
+:root {
+  --paper:  #F7F8F3;   /* page background */
+  --ink:    #16211A;   /* main text */
+  --gray:   #4F5F54;   /* softer text */
+  --mist:   #E4EFDD;   /* light green */
+  --green:  #2F6B3A;   /* buttons and links */
+  --forest: #1F4D2E;   /* dark green */
+  --lime:   #D8EC6B;   /* highlight */
+  --sand:   #E8DFC8;   /* earth tone */
+  --clay:   #B5532F;   /* warnings */
+  --line:   #D9E1D2;   /* thin borders */
+  --edge:   #7F8F84;   /* form borders */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Figtree, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ---------- 2. TEXT AND LINKS ---------- */
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+a {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Clear outline so keyboard users can see where they are */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid var(--forest);
+  outline-offset: 3px;
+}
+
+.gray       { color: var(--gray); }
+.green-text { color: var(--green); }
+
+/* Hidden on screen, still read by screen readers */
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+
+/* ---------- 3. PAGE LAYOUT ---------- */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main {
+  flex: 1;
+  padding-top: 12px;
+  padding-bottom: 40px;
+}
+
+/* Space below each block of content */
+.section {
+  margin-bottom: 24px;
+}
+
+/* Two blocks side by side. They stack on top of each other when there is no room. */
+.two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 12px 16px;
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+
+/* ---------- 4. HEADER AND MENU ---------- */
+
+.site-header {
+  padding: 12px 0;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--forest);
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+}
+
+.nav a {
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  border-bottom-color: var(--lime);
+}
+
+/* The page you are on */
+.nav a[aria-current="page"] {
+  border-bottom-color: var(--green);
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.nav a.button {
+  padding: 12px 24px;
+  border-bottom: 0;
+}
+
+
+/* ---------- 5. BUTTONS, PILLS AND CARDS ---------- */
+
+.button {
+  display: inline-block;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-green {
+  background: var(--green);
+  color: #FFFFFF;
+}
+
+.button-green:hover {
+  background: var(--forest);
+}
+
+.button-lime {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.button-white {
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 1px solid var(--edge);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--mist);
+  color: var(--forest);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pill-white { background: #FFFFFF; }
+.pill-lime  { background: var(--lime); color: var(--ink); }
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #FFFFFF;
+}
+
+.card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Icons (the drawing itself is in the HTML) */
+.icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-circle {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+}
+
+
+/* ---------- 6. FORMS ---------- */
+
+label {
+  font-weight: 600;
+}
+
+input[type="number"] {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  color: var(--ink);
+  background: #FFFFFF;
+}
+
+/* Rounded search bar with a button inside */
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 22px;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  background: #FFFFFF;
+}
+
+.search-bar input {
+  flex: 1 1 160px;
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar:focus-within {
+  outline: 3px solid var(--forest);
+  outline-offset: 3px;
+}
+
+/* Filter buttons made from checkboxes */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  background: #FFFFFF;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+}
+
+
+/* ---------- 7. HOME PAGE ---------- */
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--mist);
+}
+
+.hero-text {
+  flex: 1 1 420px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.08;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+}
+
+.hero-text .search-bar {
+  width: 100%;
+}
+
+/* The picture area: the drawing fills it, price tags float on top */
+.hero-picture {
+  flex: 1 1 360px;
+  position: relative;
+  min-height: 340px;
+}
+
+.hero-picture svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.price-tag {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: var(--green);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.price-tag strong,
+.price-tag span {
+  display: block;
+  color: var(--ink);
+}
+
+.price-tag span {
+  font-size: 0.875rem;
+  color: var(--gray);
+}
+
+.price-tag-top    { top: 24px; }
+.price-tag-bottom { bottom: 24px; }
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stat {
+  flex: 1 1 180px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #FFFFFF;
+  text-align: center;
+  color: var(--gray);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.9rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.step {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--forest);
+  color: #FFFFFF;
+}
+
+.step h2 {
+  font-size: 1.35rem;
+}
+
+
+/* ---------- 8. FIND A SHOP PAGE ---------- */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.shop-list {
+  flex: 1 1 340px;
+}
+
+.results-title {
+  margin-bottom: 12px;
+  font-size: 1.0625rem;
+  font-weight: 400;
+}
+
+.shop-card {
+  margin-bottom: 12px;
+  padding: 16px 18px;
+}
+
+.shop-card p {
+  font-size: 0.9375rem;
+}
+
+/* Map with the selected shop card on top */
+.map-box {
+  flex: 2 1 480px;
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.map-box svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-card {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.map-card h2 {
+  font-size: 1.25rem;
+}
+
+.map-card .button-row {
+  margin-top: 10px;
+}
+
+
+/* ---------- 9. PRICE BOARD PAGE ---------- */
+
+.table-box {
+  flex: 2 1 520px;
+  overflow-x: auto;   /* the table scrolls sideways on small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0 8px 10px;
+  border-bottom: 2px solid var(--forest);
+  text-align: left;
+}
+
+td,
+tbody th {
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+.estimator {
+  flex: 1 1 300px;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--mist);
+}
+
+.estimator h2 {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.estimator label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.result {
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 14px;
+  background: #FFFFFF;
+}
+
+.result strong {
+  font-size: 1.6rem;
+}
+
+
+/* ---------- 10. SORT IT RIGHT PAGE ---------- */
+
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.title-row .search-bar {
+  flex: 1 1 280px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.category {
+  flex: 1 1 80px;
+  text-align: center;
+}
+
+.category a {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.category-circle {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: var(--mist);
+  color: var(--forest);
+}
+
+/* The chosen category */
+.category.selected .category-circle {
+  border-color: var(--green);
+  background: var(--lime);
+}
+
+.guide {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.guide-card {
+  flex: 1 1 220px;
+  border-top: 6px solid var(--green);
+}
+
+.guide-dark    { border-top-color: var(--forest); }
+.guide-warning { border-top-color: var(--clay); }
+
+.guide-card h2 {
+  margin-bottom: 10px;
+}
+
+.plain-list li {
+  margin-bottom: 6px;
+}
+
+.numbered {
+  list-style: decimal;
+  padding-left: 22px;
+}
+
+.myth {
+  flex: 1 1 220px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--lime);
+}
+
+.myth p {
+  margin-bottom: 10px;
+}
+
+.myth-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+
+/* ---------- 11. HAZARDOUS WASTE PAGE ---------- */
+
+.alert-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  border-radius: 18px;
+  background: var(--clay);
+  color: #FFFFFF;
+  font-size: 1.15rem;
+}
+
+.alert-bar .icon {
+  flex: none;
+  width: 34px;
+  height: 34px;
+}
+
+.hazard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.hazard-card {
+  flex: 1 1 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hazard-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #F3DDD3;
+  color: #8E3B1C;
+}
+
+/* The drop-off box sits at the bottom of every card */
+.dropoff {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--mist);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+
+/* ---------- 12. FOOTER ---------- */
+
+.site-footer {
+  padding: 24px 0;
+  background: var(--forest);
+  color: #FFFFFF;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px 56px;
+}
+
+.footer-brand {
+  flex: 1 1 240px;
+}
+
+.site-footer .logo {
+  color: #FFFFFF;
+}
+
+.footer-brand p {
+  margin-top: 6px;
+  font-size: 0.9375rem;
+  color: #D5E3D0;
+}
+
+.footer-column h2 {
+  margin-bottom: 4px;
+  font-size: 0.9375rem;
+}
+
+.footer-column ul {
+  font-size: 0.9375rem;
+}
+
+.footer-column li {
+  margin-bottom: 4px;
+}
+
+.site-footer a {
+  color: var(--lime);
+}
+
+.site-footer a:focus {
+  outline-color: var(--lime);
+}
+
+
+/* ---------- REVISIONS: LOGO SPACE, HERO IMAGE, MAP, COPYRIGHT ---------- */
+
+/* Empty space for your logo (the picture goes inside .logo) */
+.logo {
+  min-width: 140px;
+  min-height: 40px;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 44px;
+}
+
+/* The box for your own hero picture. The picture fills the whole box. */
+.hero-picture {
+  background: #D3E6C9;
+}
+
+.hero-picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price-tag {
+  z-index: 1;
+}
+
+/* Live map */
+.map-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Sits at the bottom left so the map credit on the right stays visible */
+.map-card {
+  right: auto;
+  bottom: 34px;
+  width: 340px;
+  max-width: calc(100% - 40px);
+}
+
+/* Looks like a button but is only text */
+.fake-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Closed shop */
+.pill-gray {
+  background: #DDDDDD;
+  color: #333333;
+}
+
+.shop-closed {
+  background: #EFEFEA;
+}
+
+/* Footer copyright line */
+.copyright {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #5F8A6C;
+  font-size: 0.9375rem;
+  color: #D5E3D0;
+}
+
+
+/* ---------- 13. SMALL SCREENS ---------- */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-text {
+    padding: 24px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .search-bar {
+    border-radius: 24px;
+    padding: 10px;
+  }
+
+  .search-bar input {
+    flex-basis: 100%;
+    padding: 0 8px;
+  }
+
+  .map-box {
+    min-height: 0;
+  }
+
+  /* On a small screen the map is a strip and the shop card sits underneath */
+  .map-box svg {
+    position: static;
+    height: 260px;
+  }
+
+  .map-card {
+    position: static;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+
+/* ---------- 14. PRINT ---------- */
+
+@media print {
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .button,
+  .chip-row,
+  .search-bar,
+  .estimator {
+    display: none;
+  }
+
+  body {
+    background: #FFFFFF;
+    font-size: 12pt;
+  }
+}
+
+
+/* Small screens: the map becomes a strip and the shop card goes underneath */
+@media (max-width: 600px) {
+
+  .map-box iframe {
+    position: static;
+    display: block;
+    height: 320px;
+  }
+
+  .map-card {
+    width: auto;
+    max-width: none;
+  }
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find junk shops, check today's price per kilo and learn what to sort.">
+  <title>Home | KiloKita</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="logo" href="index.html">
+        <img src="KILOKITA.png" alt="" width="62" height="44">
+        <span>KiloKita</span>
+      </a>
+
+      <nav class="nav" aria-label="Main menu">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="find-a-shop.html">Find a Shop</a></li>
+          <li><a href="price-board.html">Price Board</a></li>
+          <li><a href="sort-it-right.html">Sort It Right</a></li>
+          <li><a href="hazardous-waste.html">Hazardous Waste</a></li>
+          <li><a class="button button-lime" href="#">List your shop</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main" class="container">
+
+    <section class="hero section">
+
+      <div class="hero-text">
+        <span class="pill pill-white">SORT. SELL. SUSTAIN.</span>
+
+        <h1>Turn Trash Into <span class="green-text">Cash</span>, One Kilo at a Time.</h1>
+
+        <p class="gray">
+          Find a junk shop near you, check today's price per kilo and learn
+          what to sort. Free, light on data and printable.
+        </p>
+
+        <form class="search-bar" action="find-a-shop.html">
+          <label class="hidden" for="location">Your barangay or city</label>
+          <input id="location" name="location" type="search" value="Baguio City">
+          <button class="button button-green" type="submit">Find junk shops</button>
+        </form>
+      </div>
+
+      <div class="hero-picture">
+
+      <img src="RECYCLEPICTURE.jpg" alt="A Picture of a box containing recyclable materials" width="400" height="400">
+
+        <div class="price-tag price-tag-top">
+          <div>
+            <strong>PET bottles</strong>
+            <span>₱14 / kg</span>
+          </div>
+        </div>
+
+        <div class="price-tag price-tag-bottom">
+          <div>
+            <strong>Aluminum cans</strong>
+            <span>₱75 / kg</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <ul class="stats section">
+      <li class="stat"><strong>1,240</strong> junk shops listed</li>
+      <li class="stat"><strong>18</strong> materials priced</li>
+      <li class="stat"><strong>312</strong> barangays covered</li>
+      <li class="stat"><strong>100%</strong> free to use</li>
+    </ul>
+
+
+    <ol class="steps section">
+
+      <li class="step">
+        <span class="icon-circle">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z" />
+          </svg>
+        </span>
+        <div>
+          <h2>Find</h2>
+          <p>Search 1,240 junk shops by barangay, material and opening hours.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="icon-circle">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h10M4 17h6" />
+          </svg>
+        </span>
+        <div>
+          <h2>Sort</h2>
+          <p>Learn what to rinse, flatten or keep out of the bin.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <span class="icon-circle">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM9 12h6" />
+          </svg>
+        </span>
+        <div>
+          <h2>Earn</h2>
+          <p>Check today's price per kilo before you haul your load.</p>
+        </div>
+      </li>
+
+    </ol>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <img src="KILOKITA.png" alt="KiloKita logo">
+          <span class="hidden">KiloKita home</span>
+        </a>
+        <p>Every Kilo Counts, Every Peso Matters.</p>
+      </div>
+
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="find-a-shop.html">Find a Shop</a></li>
+          <li><a href="price-board.html">Price Board</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Learn</h2>
+        <ul>
+          <li><a href="sort-it-right.html">Sort It Right</a></li>
+          <li><a href="hazardous-waste.html">Hazardous Waste</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>About</h2>
+        <ul>
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">References</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Language</h2>
+        <ul>
+          <li><a href="#" lang="en">English</a> | <a href="#" lang="fil">Filipino</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="container copyright">© 2026 Kilo Kita - Dwein Markeen S. Calaunan</p>
+  </footer>
+
+</body>
+
+</html>
